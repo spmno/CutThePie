@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @work_record.user_id %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @work_record.content %>
+</p>
+
+<p>
+  <strong>Record date:</strong>
+  <%= @work_record.record_date %>
+</p>
+
+<%= link_to 'Edit', edit_work_record_path(@work_record) %> |
+<%= link_to 'Back', work_records_path %>

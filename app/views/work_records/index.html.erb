@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t("list_work_records") %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("activerecord.models.user") %></th>
+      <th><%= t("activerecord.attributes.work_record.content") %></th>
+      <th><%= t("activerecord.attributes.work_record.date") %></th>
+      <th><%= t("activerecord.attributes.work_record.duration") %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_records.each do |work_record| %>
+      <tr>
+        <td><%= work_record.user.email %></td>
+        <td><%= work_record.content %></td>
+        <td><%= work_record.record_date %></td>
+        <td><%= work_record.duration %></td>
+        <td><%= link_to 'Show', work_record %></td>
+        <td><%= link_to 'Edit', edit_work_record_path(work_record) %></td>
+        <td><%= link_to 'Destroy', work_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t("new_work_records"), new_work_record_path %>
